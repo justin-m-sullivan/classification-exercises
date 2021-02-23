@@ -11,7 +11,9 @@ def get_connection(db, user=user, host=host, password=password):
     '''
     return f'mysql+pymysql://{user}:{password}@{host}/{db}'
 
- def get_titanic_data():
+########### Aquire Titanic Data ###########
+
+def get_titanic_data():
     '''
     This function reads in titanic data from Codeup database and writes data to
     a csv file if cached == False or if cached == True reads in titanic df from
@@ -29,8 +31,7 @@ def get_connection(db, user=user, host=host, password=password):
           
     return df
 
-
-get_titanic_data().head()  
+ 
 
 def get_iris_data():
     '''
@@ -54,7 +55,3 @@ def get_iris_data():
         df.to_csv(filename)
           
     return df
-
-get_iris_data().head()
-
-
