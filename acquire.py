@@ -47,11 +47,12 @@ def get_iris_data():
         
         # Read fresh data from db into a DataFrame. Joins species id on dataframe. 
         df = pd.read_sql('''
-    SELECT * FROM measurements as m
-    JOIN species ON m.`species_id`
-    ''', get_connection('iris_db'))
+                SELECT measurements.measurement_id, measurements.sepal_length,\
+                measurements.sepal_width, measurements.petal_length, \
+                measurements.petal_width, species.species_name, species.species_id \
+                FROM measurements JOIN species ON(species.species_id=measurements.species_id)
+                ''', get_connection('iris_db'))
         
         # Write DataFrame to a csv file.
         df.to_csv(filename)
-          
-    return df
+        return df
