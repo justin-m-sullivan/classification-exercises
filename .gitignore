@@ -13,6 +13,7 @@ classification_evaluation_lesson.ipynb
 gives_you_paws.csv
 *.pdf
 decision_tree_lesson.ipynb
+logistic_regression_lesson.ipynb
 
 
 ## Ignore Visual Studio temporary files, build results, and
